@@ -1,16 +1,21 @@
-pipeline{
-agent none
-stages{
-stage('Build'){
-        echo "This is Build===========>1"
-    }
-   stage('Test'){
-        echo "This is Test===========>2"
-    }
-    stage('Dploy'){
-        echo "This is Deploy===========>3"
-    }
+pipeline {
+    agent any
 
-
- }
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+    }
 }
